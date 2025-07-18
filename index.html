@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilman | Developer Cyberpunk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f0ff;
+            --dark-purple: #5e17eb;
+            --bg-dark: #0a0a0a;
+            --bg-darker: #050505;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .neon-text {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        .neon-border {
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue), 
+                        inset 0 0 5px var(--neon-blue);
+        }
+
+        .skill-badge {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, rgba(30,30,30,0.8), rgba(10,10,10,0.9));
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(94, 23, 235, 0.3);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 15px var(--neon-blue);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .glow-effect:hover::after {
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .pulse {
+            animation: pulse 3s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navbar -->
+    <nav class="border-b border-gray-800 py-4 px-6 lg:px-12 backdrop-blur-md bg-black bg-opacity-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="neon-text text-2xl font-bold">HILMAN_DEV</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition">Tentang</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition">Keahlian</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition">Proyek</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition">Kontak</a>
+            </div>
+            <button class="md:hidden text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 lg:py-24 px-6 lg:px-12 relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="neon-text">Halo,</span> 
+                    <br>Saya Hilman
+                </h1>
+                <p class="text-xl mb-8 max-w-lg">
+                    Pengembang web dengan jiwa cyberpunk dan semangat untuk menciptakan solusi digital berkualitas tinggi.
+                </p>
+                <a href="#about" class="px-8 py-3 bg-transparent neon-border text-white hover:bg-opacity-20 transition rounded-full font-medium">
+                    Jelajahi Profil
+                </a>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img 
+                        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c65766d0-cd3a-4d39-8151-1541f88a67a1.png" 
+                        alt="Ilustrasi karakter anime pria hacker dengan hoodie hitam, rambut gelap, dan mata biru neon menyala dalam gaya cyberpunk" 
+                        class="rounded-lg w-full max-w-md glow-effect pulse border border-gray-800 hover:border-neon-blue"
+                        onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cdec3625-5370-4475-9862-6cd79d5e8549.png'"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 lg:py-24 px-6 lg:px-12 bg-[#101010]">
+        <div class="container mx-auto">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-12 neon-text text-center">Tentang Saya</h2>
+            <div class="max-w-4xl mx-auto bg-[#0d0d0d] p-8 lg:p-12 rounded-xl neon-border">
+                <p class="text-lg lg:text-xl mb-6">
+                    Halo! Saya Hilman, seorang pengembang web muda yang menyukai dunia pemrograman dan teknologi. Saya percaya bahwa coding adalah seni yang memungkinkan kita menciptakan dunia digital yang luar biasa.
+                </p>
+                <p class="text-lg lg:text-xl">
+                    Dengan pengalaman selama 2 tahun di industri, saya menikmati setiap tantangan dalam membangun solusi web yang inovatif dan fungsional. Di waktu luang, saya senang bereksperimen dengan teknologi terbaru dan berkontribusi pada proyek open source.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 lg:py-24 px-6 lg:px-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-12 neon-text text-center">Keahlian</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
+                <div class="skill-badge text-center py-4 px-2 rounded-lg">
+                    <span class="text-4xl mb-2">HTML</span>
+                    <p class="text-sm">HTML5 Modern</p>
+                </div>
+                <div class="skill-badge text-center py-4 px-2 rounded-lg">
+                    <span class="text-4xl mb-2">CSS</span>
+                    <p class="text-sm">CSS3, Tailwind</p>
+                </div>
+                <div class="skill-badge text-center py-4 px-2 rounded-lg">
+                    <span class="text-4xl mb-2">JS</span>
+                    <p class="text-sm">JavaScript ES6+</p>
+                </div>
+                <div class="skill-badge text-center py-4 px-2 rounded-lg">
+                    <span class="text-4xl mb-2">PHP</span>
+                    <p class="text-sm">Laravel</p>
+                </div>
+                <div class="skill-badge text-center py-4 px-2 rounded-lg">
+                    <span class="text-4xl mb-2">React</span>
+                    <p class="text-sm">React.js & Next.js</p>
+                </div>
+                <div class="skill-badge text-center py-4 px-2 rounded-lg">
+                    <span class="text-4xl mb-2">Python</span>
+                    <p class="text-sm">Django, Flask</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 lg:py-24 px-6 lg:px-12 bg-[#101010]">
+        <div class="container mx-auto">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-12 neon-text text-center">Proyek Saya</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl overflow-hidden p-6 glow-effect">
+                    <div class="h-48 mb-4 overflow-hidden rounded-lg">
+                        <img 
+                            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/acaaeb72-360d-4ca0-9bbf-d8d13b0c64a7.png" 
+                            alt="Tampilan website portofolio modern dengan tema gelap dan aksen biru neon"
+                            class="w-full h-full object-cover"
+                            onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/00b09ae6-9232-44d4-86f4-320ed392ebfd.png'"
+                        >
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 neon-text">Website Portofolio</h3>
+                    <p class="text-gray-400 mb-4">Desain portofolio pribadi yang responsif dengan animasi modern.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">HTML</span>
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">CSS</span>
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">JavaScript</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl overflow-hidden p-6 glow-effect">
+                    <div class="h-48 mb-4 overflow-hidden rounded-lg">
+                        <img 
+                            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3ea81146-2f80-49c8-be4b-231f90fb0aee.png" 
+                            alt="Antarmuka aplikasi chat dengan tema gelap, bubble chat biru neon, dan daftar kontak"
+                            class="w-full h-full object-cover"
+                            onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/307a3185-5a72-472b-a45e-d22219fe7f7e.png'"
+                        >
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 neon-text">Aplikasi Chat</h3>
+                    <p class="text-gray-400 mb-4">Aplikasi pesan real-time dengan fitur enkripsi end-to-end.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">React</span>
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">Node.js</span>
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">WebSocket</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card rounded-xl overflow-hidden p-6 glow-effect">
+                    <div class="h-48 mb-4 overflow-hidden rounded-lg">
+                        <img 
+                            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/637b8034-3bda-48f9-a8eb-5a2573402f49.png" 
+                            alt="Tampilan landing page produk teknologi dengan CTA mencolok dan elemen interaktif"
+                            class="w-full h-full object-cover"
+                            onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/252d19dd-7e35-487f-9aa0-804d1d3cbb39.png'"
+                        >
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 neon-text">Landing Page Produk</h3>
+                    <p class="text-gray-400 mb-4">Halaman penjualan produk teknologi dengan konversi tinggi.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">Vue.js</span>
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">Tailwind</span>
+                        <span class="text-xs px-2 py-1 bg-[#00f0ff30] text-[#00f0ff] rounded">GSAP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 lg:py-24 px-6 lg:px-12">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-12 neon-text text-center">Kontak</h2>
+            <div class="bg-[#0d0d0d] p-8 lg:p-12 rounded-xl neon-border">
+                <p class="text-xl lg:text-2xl mb-8 text-center">
+                    Tertarik bekerja sama atau sekedar berdiskusi?
+                    <br>Hubungi saya melalui:
+                </p>
+                <div class="flex flex-col items-center">
+                    <a href="mailto:hilman.dev@email.com" class="text-2xl lg:text-3xl neon-text font-bold mb-8 hover:underline">
+                        hilman.dev@email.com
+                    </a>
+                    <div class="flex space-x-6">
+                        <a href="#" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:border-neon-blue hover:text-neon-blue transition">
+                            <span class="sr-only">GitHub</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:border-neon-blue hover:text-neon-blue transition">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:border-neon-blue hover:text-neon-blue transition">
+                            <span class="sr-only">Twitter</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 text-center border-t border-gray-800 text-gray-500 text-sm">
+        <p>© 2023 Hilman Dev. Seluruh hak cipta dilindungi.</p>
+        <p class="mt-2">Dibangun dengan ❤️ dan banyak kode</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle functionality would go here
+        // Currently just a placeholder as per requirements
+    </script>
+</body>
+</html>
+
